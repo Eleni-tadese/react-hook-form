@@ -1,0 +1,120 @@
+/* Page */
+.contact-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+
+/* Form card */
+.contact-form {
+  width: 100%;
+  max-width: 520px;
+  background-color: #111111;
+  border: 1px solid #FFD107;
+  border-radius: 8px;
+  padding: 35px;
+  box-sizing: border-box;
+}
+
+
+
+.contact-form h1 {
+  margin: 0 0 6px 0;
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 7000;
+}
+
+.contact-description {
+  margin: 0 0 24px 0;
+  color: #9ca3af;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  margin-bottom: 7px;
+  color: #a09393;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 11px;
+  border: 1px solid #FFD107;
+  border-radius: 4px;
+  color: #6b7280;;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 13px;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* Placeholder */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #6b7280;
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #ffd700;
+  box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.15);
+}
+
+.form-group textarea {
+  min-height: 98px;
+  resize: vertical;
+}
+
+.contact-form button {
+  width: 100%;
+  margin-top: 13px;
+  padding: 9px 16px;
+  background-color: #000000;
+  border: 1px solid #ffd700;
+  border-radius: 4px;
+  color: #ffd700;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+.contact-form button:hover {
+  background-color: #ffd700;
+  color: #000000;
+}
+/* Mobile */
+@media (max-width: 500px) {
+  .contact-page {
+    padding: 16px;
+  }
+  .contact-form {
+    padding: 24px;
+  }
+  .contact-form h1 {
+    font-size: 24px;
+  }
+}
