@@ -70,4 +70,4 @@ The form validates:
 When a field is invalid, an appropriate error message is displayed below the field.
 ## Screenshot
 
-![Contact Form Screenshot](D:/Eleni/A2SV/React/Task5/Screenshot1.png)
+![Contact Form Screenshot](./screenshots/Screenshot1.png)
