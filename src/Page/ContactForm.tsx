@@ -12,6 +12,7 @@ function Contact() {
   const {
     register,
     handleSubmit,
+    formState: { errors },
   } = useForm<ContactFormInputs>();
 
   const onSubmit: SubmitHandler<ContactFormInputs> = (data) => {
@@ -25,7 +26,6 @@ function Contact() {
         onSubmit={handleSubmit(onSubmit)}
       >
         <h1>Contact Us</h1>
-
         <p className="contact-description">
           We'd love to hear from you. Send us a message and
           we'll get back to you soon.
@@ -39,8 +39,17 @@ function Contact() {
             id="name"
             type="text"
             placeholder="Your name"
-            {...register('name')}
+            {...register('name',{ required: 'Name is required',
+               minLength: {
+    value: 2,
+    message: 'Name must be at least 2 characters',
+  },
+
+            })}
           />
+ {errors.name && (
+  <p>{errors.name.message}</p>
+)}
         </div>
 
         {/* Email */}
@@ -51,8 +60,21 @@ function Contact() {
             id="email"
             type="email"
             placeholder="you@example.com"
-            {...register('email')}
+            {...register('email',
+               {
+    required: 'Email is required',
+     pattern: {
+    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+    message: 'Please enter a valid email address',
+  },
+        }
+
+            )}
           />
+
+          {errors.email && (
+  <p>{errors.email.message}</p>
+)}
         </div>
 
         {/* Message */}
@@ -63,8 +85,20 @@ function Contact() {
             id="message"
             rows={5}
             placeholder="Write your message..."
-            {...register('message')}
+            {...register('message',
+               {
+  required: 'Message is required',
+  minLength: {
+    value: 10,
+    message: 'Message must be at least 10 characters',
+  },
+}
+
+            )}
           />
+          {errors.message && (
+  <p>{errors.message.message}</p>
+)}
         </div>
 
         {/* Submit */}
